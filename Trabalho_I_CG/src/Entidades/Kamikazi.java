@@ -17,9 +17,9 @@ public class Kamikazi extends Entity{
 
 	public Kamikazi(int x, int y, int width, int height, int dx, double speed) {
 		super(x, y, width, height, dx, speed);
-		//DX É QUAL VETOR DE BUFFEREDIMAGES 
-		//0 é uma bullet
-		//1 é o oponente 
+		//DX Ã‰ QUAL VETOR DE BUFFEREDIMAGES 
+		//0 Ã© uma bullet
+		//1 Ã© o oponente 
 		//CARREGA OS SPRITES DA MINHA BULLET
 		spriteB = new BufferedImage[4];
 		for(int i = 0;i < 4;i++) {spriteB[i] = Game.sheet.getSprite(224 + (8*i), 10, 8, 12);}
@@ -30,7 +30,7 @@ public class Kamikazi extends Entity{
 	}
 	
 	public void distancia() {
-		//DEFINE O PERCURSO ATÉ A POSIÇÃO DO PLAYER NO INSTANTE DA DECISÃO
+		//DEFINE O PERCURSO ATÃ‰ A POSIÃ‡ÃƒO DO PLAYER NO INSTANTE DA DECISÃƒO
 		xInicial = getX() +(getWidth()/2);
 		yInicial = getY() + (getHeight()/2);
 		yFinal = (Game.player.getY()+(Game.player.getHeight()/2));
@@ -49,9 +49,9 @@ public class Kamikazi extends Entity{
 	}
 	
 	public void destroi() {
-		//VERIFICA SE COLIDIU COM MEU PLAYER E QUE ELE NÃO FOI ATINGIDO RECENTEMENTE
+		//VERIFICA SE COLIDIU COM MEU PLAYER E QUE ELE NÃƒO FOI ATINGIDO RECENTEMENTE
 		if(isColliding(this, Game.player) && Game.player.hit == false) {
-			Game.entidades.add(new Destruido(getX(),getY(),getWidth(),getHeight(),0,4));	//CRIA UMA ANIMAÇÃO DE DESTRUIÇÃO
+			Game.entidades.add(new Destruido(getX(),getY(),getWidth(),getHeight(),0,4));	//CRIA UMA ANIMAÃ‡ÃƒO DE DESTRUIÃ‡ÃƒO
 			Game.entidades.remove(this);	//DESTROI O KAMIKAZI
 			Game.player.vida--;	//TIRA A VIDA DO MEU PLAYER
 			Game.player.hit = true; //INDICA QUE MEU PLAYER FOI ATINGIDO

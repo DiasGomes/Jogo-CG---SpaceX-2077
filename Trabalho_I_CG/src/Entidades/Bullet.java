@@ -26,16 +26,16 @@ public class Bullet extends Entity{
 		if(y < 0 || y > Game.HEIGHT) {
 			Game.entidades.remove(this); 	//DESTRUINDO A BULLET DEPOIS DE SAIR DA TELA
 		}
-		if(getDx() == -1 && Game.player.destruido == false) {	//SE A BALA EST¡ SUBINDO … PQ O PLAYER ATIROU
-			destroiOponente1();	//VERIFICA SE MINHA BULLET EST¡ EM COLIS√O COM UM OPONENETE1
-			destroiOponente2();	//VERIFICA SE MINHA BULLET EST¡ EM COLIS√O COM UM OPONENETE2
-			destroiKamikazi();	////VERIFICA SE MINHA BULLET EST¡ EM COLIS√O COM UM KAMIKAZI
-		}else if(getDx() == 1) {	//SE A BALA EST¡ DESCENDO … PQ O OPONENTE1 ATIROU
-			danoPlayer(); //VERIFICA SE ABULLET EST¡ EM COLIS√O COM O PLAYER
+		if(getDx() == -1 && Game.player.destruido == false) {	//SE A BALA EST√Å SUBINDO √â PQ O PLAYER ATIROU
+			destroiOponente1();	//VERIFICA SE MINHA BULLET EST√Å EM COLIS√ÉO COM UM OPONENETE1
+			destroiOponente2();	//VERIFICA SE MINHA BULLET EST√Å EM COLIS√ÉO COM UM OPONENETE2
+			destroiKamikazi();	////VERIFICA SE MINHA BULLET EST√Å EM COLIS√ÉO COM UM KAMIKAZI
+		}else if(getDx() == 1) {	//SE A BALA EST√Å DESCENDO √â PQ O OPONENTE1 ATIROU
+			danoPlayer(); //VERIFICA SE ABULLET EST√Å EM COLIS√ÉO COM O PLAYER
 		}
 		//VERIFICA SE ACERTOU OUTRA BULLET
 		destroiBullet();
-		//L”GICA DE ANIMA«√O DA BALA
+		//L√ìGICA DE ANIMA√á√ÉO DA BALA
 		animaBullet();
 	}
 	
@@ -69,7 +69,7 @@ public class Bullet extends Entity{
 					Game.entidades.add(new Destruido(e.getX(),e.getY(),e.getWidth(),e.getHeight(),1,8));
 					Game.entidades.remove(this); //DESTRUINDO A BULLET
 					//DESTRUINDO OPONENTE1
-					Game.player.pontos += e.getY()*2; //O N⁄MERO DE PONTOS … A POSI«√O DO Y MULTIPLICADA POR UM PESO
+					Game.player.pontos += e.getY()*2; //O N√öMERO DE PONTOS √â A POSI√á√ÉO DO Y MULTIPLICADA POR UM PESO
 					Game.player.dinheiro++; //player ganha dinheiro
 					Game.inimigos.remove(e);
 					Game.entidades.remove(e);
@@ -88,7 +88,7 @@ public class Bullet extends Entity{
 					Game.entidades.add(new Destruido(e.getX(),e.getY(),e.getWidth(),e.getHeight(),2,11));
 					//DESTRUINDO A BULLET
 					Game.entidades.remove(this); 
-					//O N⁄MERO DE PONTOS … A POSI«√O DO Y MULTIPLICADA POR UM PESO
+					//O N√öMERO DE PONTOS √â A POSI√á√ÉO DO Y MULTIPLICADA POR UM PESO
 					Game.player.pontos += e.getY()*3; 
 					Game.player.dinheiro++; //player ganha dinheiro
 					//CRIANDO UM OPONENTE1
@@ -112,7 +112,7 @@ public class Bullet extends Entity{
 					Game.entidades.add(new Destruido(getX(),getY(),getWidth(),getHeight(),0,4));
 					Game.entidades.remove(this); //DESTRUINDO A BULLET
 					//DESTRUINDO KAMIKAZI
-					Game.player.pontos += e.getY()*2; //O N⁄MERO DE PONTOS … A POSI«√O DO Y MULTIPLICADA POR UM PESO
+					Game.player.pontos += e.getY()*2; //O N√öMERO DE PONTOS √â A POSI√á√ÉO DO Y MULTIPLICADA POR UM PESO
 					Game.player.dinheiro++; //player ganha dinheiro
 					Game.inimigos.remove(e);
 					Game.entidades.remove(e);
@@ -122,7 +122,7 @@ public class Bullet extends Entity{
 	}
 	
 	public void danoPlayer() {
-		//VERIFICA SE COLIDIU COM O PLAYER && SE MEU PLAYER N√O FOI ATINGIDO RECENTEMENTE
+		//VERIFICA SE COLIDIU COM O PLAYER && SE MEU PLAYER N√ÉO FOI ATINGIDO RECENTEMENTE
 		if(isColliding(this, Game.player) && Game.player.hit == false) { 
 			Game.entidades.add(new Destruido(getX(),getY(),getWidth(),getHeight(),0,4));
 			Game.player.hit = true; //INDICA QUE MEU PLAYER FOI ATINGIDO
@@ -137,7 +137,7 @@ public class Bullet extends Entity{
 			Entity e = Game.entidades.get(i);
 			if(e instanceof Bullet) { //VERIFICANDO O TIPO DA MINHA ENTIDADE
 				if(isColliding(this, e)) {
-					if(this != e) {	//VERIFICA SE N√O … A PROPRIA BULLET
+					if(this != e) {	//VERIFICA SE N√ÉO √â A PROPRIA BULLET
 						//GERANDO O EFITO DE DESTRUIDO
 						Game.entidades.add(new Destruido(getX(),getY(),getWidth(),getHeight(),0,4));
 						Game.entidades.add(new Destruido(e.getX(),e.getY(),e.getWidth(),e.getHeight(),0,4));

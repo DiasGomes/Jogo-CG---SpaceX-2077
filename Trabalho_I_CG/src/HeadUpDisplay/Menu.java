@@ -44,7 +44,7 @@ public class Menu {
 	
 	public void tick() {
 		if(estado == "Menu"){
-			//CONTROLA AS OP«’ES DISPONÕVEIS DO MENU
+			//CONTROLA AS OP√á√ïES DISPON√çVEIS DO MENU
 			if(up) {
 				up = false;
 				if(index == 0) {
@@ -61,7 +61,7 @@ public class Menu {
 				}
 			}
 			
-			if(enter) {	//FAZ A A«√O PEDIDA PELO USU¡RIO
+			if(enter) {	//FAZ A A√á√ÉO PEDIDA PELO USU√ÅRIO
 				enter = false;
 					switch(index) {
 						case 0: Game.resetar();	break;
@@ -71,12 +71,12 @@ public class Menu {
 				}
 			}
 			
-		}else if(estado == "Creditos"){	//FAZ COMO QUE MEUS CR…DITOS APARE«AM
+		}else if(estado == "Creditos"){	//FAZ COMO QUE MEUS CR√âDITOS APARE√áAM
 			if(enter) {
 				enter = false;
 				estado = "Menu";
 			}
-		}else if(estado == "Controles"){	//FAZ COMO QUE OS CONTROLES APARE«AM
+		}else if(estado == "Controles"){	//FAZ COMO QUE OS CONTROLES APARE√áAM
 			if(right) {
 				right = false;
 				if(indexControles < 1) {
@@ -106,13 +106,13 @@ public class Menu {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
 		g.drawImage(fundoMenu, 0, 0, Game.WIDTH, Game.HEIGHT, null);
-		//TÕTULO:
+		//T√çTULO:
 		g.setColor(Color.WHITE);
 		g.setFont( fontePersonalizada);
 		g.setFont(g.getFont().deriveFont(80.0f));
 		g.drawString("SpaceX",30, 100);
 		g.drawString("2077",100, 150);
-		//DESENHANDO "BOT’ES"
+		//DESENHANDO "BOT√ïES"
 		g.setFont(new Font("comic sans ms",Font.BOLD,30));
 		//g.setFont(new Font("bahnschrift",Font.BOLD,30));
 				if(estado == "Menu") {
@@ -124,7 +124,7 @@ public class Menu {
 						g.setColor(Color.WHITE);
 						g.setFont(g.getFont().deriveFont(30.0f));
 						g.drawString("Controles", poX, poY+step);
-						g.drawString("CrÈditos", poX, poY+(step*2));
+						g.drawString("Cr√©ditos", poX, poY+(step*2));
 						g.drawString("Sair", poX, poY+(step*3));
 						break;
 					case 1: 
@@ -134,13 +134,13 @@ public class Menu {
 						g.setColor(Color.WHITE);
 						g.setFont(g.getFont().deriveFont(30.0f));
 						g.drawString("Jogar", poX, poY);
-						g.drawString("CrÈditos", poX, poY+(step*2));
+						g.drawString("Cr√©ditos", poX, poY+(step*2));
 						g.drawString("Sair", poX, poY+(step*3));
 						break;
 					case 2: 
 						g.setColor(Color.YELLOW);
 						g.setFont(g.getFont().deriveFont(40.0f));
-						g.drawString("CrÈditos", poX, poY+(step*2));
+						g.drawString("Cr√©ditos", poX, poY+(step*2));
 						g.setColor(Color.WHITE);
 						g.setFont(g.getFont().deriveFont(30.0f));
 						g.drawString("Jogar", poX, poY);
@@ -155,7 +155,7 @@ public class Menu {
 						g.setFont(g.getFont().deriveFont(30.0f));
 						g.drawString("Jogar", poX, poY);
 						g.drawString("Controles", poX, poY+step);
-						g.drawString("CrÈditos", poX, poY+(step*2));
+						g.drawString("Cr√©ditos", poX, poY+(step*2));
 						break;
 				}
 			}else if(estado == "Creditos"){
@@ -166,7 +166,7 @@ public class Menu {
 				g.setFont(g.getFont().deriveFont(20.0f));
 				g.drawString("DESENVOLVIDO POR:", poX-60, poY-(step*2));
 				g.setFont(g.getFont().deriveFont(25.0f));
-				g.drawString("> Jo„o Victor Dias Gomes", poX-120, poY-step);
+				g.drawString("> Jo√£o Victor Dias Gomes", poX-120, poY-step);
 				g.drawString("> Pedro Henrique Maia Duarte", poX-120, poY);
 				g.drawString("> Pedro Costa Calazans", poX-120, poY+step);
 				g.drawString("> Thales Henrique Bastos Neves", poX-120, poY+(step*2));
@@ -207,7 +207,7 @@ public class Menu {
 				}
 				g.setColor(Color.WHITE);
 				g.setFont(g.getFont().deriveFont(20.0f));
-				g.drawString("[ESPA«O]  >   atirar", poX-50, poY);
+				g.drawString("[ESPA√áO]  >   atirar", poX-50, poY);
 				g.drawString("    [P]    >   pausar", poX-50, poY+step);
 				g.drawString("    [R]    >   reiniciar", poX-50, poY+(step*2));
 				g.drawString("  [ESC]   >   fechar", poX-50, poY+(step*3));

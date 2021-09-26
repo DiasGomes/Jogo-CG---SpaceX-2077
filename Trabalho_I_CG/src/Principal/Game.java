@@ -30,13 +30,13 @@ import HeadUpDisplay.Menu;
 public class Game extends Canvas implements Runnable, KeyListener, MouseMotionListener{
 	
 	/**
-	 * João Victor Dias Gomes
+	 * JoÃ£o Victor Dias Gomes
 	 * Pedro Henrique Maia Duarte
 	 * Pedro Costa Calazans
 	 * Thales Henrique Bastos Neves
 	 */
 	
-	//DECLARAÇAO
+	//DECLARAÃ‡AO
 	private static final long serialVersionUID = 1L;
 	public final static int WIDTH = 16*30;
 	public final static int HEIGHT = 16*40; 
@@ -79,8 +79,8 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 		this.setPreferredSize(new Dimension(WIDTH,HEIGHT)); //CONFIGURANDO O TAMANHO DA TELA
 		initFrame();
 		sheet = new SpriteSheet("/Imagens/Sprites.png");
-		entidades = new ArrayList<Entity>(); //LISTA QUE CONTÉM TODAS AS ENTIDADES DO JOGO
-		inimigos = new ArrayList<Entity>();	//LISTA QUE CONTÉM TODAS OS INIMIGOS DO JOGO
+		entidades = new ArrayList<Entity>(); //LISTA QUE CONTÃ‰M TODAS AS ENTIDADES DO JOGO
+		inimigos = new ArrayList<Entity>();	//LISTA QUE CONTÃ‰M TODAS OS INIMIGOS DO JOGO
 		image = new BufferedImage((int) (WIDTH),(int) (HEIGHT), BufferedImage.TYPE_INT_RGB);
 		rand = new Random();
 		hud = new Hud();
@@ -97,11 +97,11 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 	@Override
 	public void run() {
 		
-		requestFocus(); //FOCA NA TELA DO JOGO AO ENTRAR, NÃO NECESSITANDO CLICAR NELA
+		requestFocus(); //FOCA NA TELA DO JOGO AO ENTRAR, NÃƒO NECESSITANDO CLICAR NELA
 		//CRIANDO LOOP
 		while(true) {
 			tick(); //LOGICA DO JOGO
-			render(); //RENDERIZAÇÃO DO JOGO
+			render(); //RENDERIZAÃ‡ÃƒO DO JOGO
 			try {
 				Thread.sleep((int) (1000/60)); //FAZENDO O SISTEMA "DORMIR" A CADA 1/60 DE SEGUNDO
 			} catch (InterruptedException e) {
@@ -110,7 +110,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 		}
 	}
 	
-	public void tick() {	//LÓGICA DO JOGO
+	public void tick() {	//LÃ“GICA DO JOGO
 		if(estado == "Menu") {
 			menu.tick();
 		}else if(estado == "Fase") {
@@ -135,15 +135,15 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 				andaFundo();
 				//ESCOLHENDO INIMIGO PARA DAR RASANTE
 				escolheIniRasante();
-				//Lógica do Head Up Display
+				//LÃ³gica do Head Up Display
 				hud.tick(); 
 			}
 		}
 		
 	}
 	
-	public void render() {	//RENDERIZAÇÃO
-		//CONFIGURANDO RENDERIZAÇÃO
+	public void render() {	//RENDERIZAÃ‡ÃƒO
+		//CONFIGURANDO RENDERIZAÃ‡ÃƒO
 		BufferStrategy bs = this.getBufferStrategy();
 		if(bs == null) {
 			this.createBufferStrategy(3);return;
@@ -170,7 +170,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 		frame.add(this);
 		frame.setResizable(false);
 		frame.pack();
-		frame.setLocationRelativeTo(null); //Posição meio da tela
+		frame.setLocationRelativeTo(null); //PosiÃ§Ã£o meio da tela
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setAlwaysOnTop(true);
@@ -197,7 +197,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 	}
 	
 	public void andaFundo() {
-		//Lógica da imagem do fundo andando
+		//LÃ³gica da imagem do fundo andando
 				if(fundoY >= HEIGHT) {
 					fundoY = -HEIGHT; //O y da minha imagem volta para cima da tela
 				}
@@ -245,11 +245,11 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 			if(contRasante >= contRasanteMax && inimigos.size() > 2) {
 				contRasante = 0;
 				//coloquei um timer para chamar um rasante
-				//além de um tamnho minimo para que ele ocorra
-				if(rand.nextInt(10) < 2) {	//uma chance de ocorrer ou não
-					escolhido = rand.nextInt(Game.inimigos.size());	// sorteia um numero que será um index da lista de inimigos
+				//alÃ©m de um tamnho minimo para que ele ocorra
+				if(rand.nextInt(10) < 2) {	//uma chance de ocorrer ou nÃ£o
+					escolhido = rand.nextInt(Game.inimigos.size());	// sorteia um numero que serÃ¡ um index da lista de inimigos
 					Entity e = inimigos.get(escolhido);	//seleciono o sorteado
-					Kamikazi k = new Kamikazi(e.getX(),e.getY(),e.getWidth(),e.getHeight(),1,10); //gero uma entidade que vá em direção ao player
+					Kamikazi k = new Kamikazi(e.getX(),e.getY(),e.getWidth(),e.getHeight(),1,10); //gero uma entidade que vÃ¡ em direÃ§Ã£o ao player
 					inimigos.remove(e); //destruo a entidade atual
 					entidades.remove(e);
 					entidades.add(k); //adiciono a nova
@@ -268,11 +268,11 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 			for(int i = 0;i < entidades.size();i++) {
 				entidades.get(i).render(g);
 			}
-			//Lógica do Head Up Display
+			//LÃ³gica do Head Up Display
 			hud.render(g); 
 			//OBJETO QUE VAI ME PERMITIR DESENHAR IMAGENS COM TRANSPARENCIA
 			Graphics2D g2 = (Graphics2D) g;
-			//DESENHANDO CADA RESPECTIVO ESTADO DO JOGO - PAUSE - GAME OVER - TRANSIÇÃO DE FASE
+			//DESENHANDO CADA RESPECTIVO ESTADO DO JOGO - PAUSE - GAME OVER - TRANSIÃ‡ÃƒO DE FASE
 			if(estado == "Pause") {	//SISTEMA DE PAUSE
 				g2.setColor(new Color(0,0,0,100));
 				g2.fillRect(0, 0, WIDTH, HEIGHT);
@@ -311,7 +311,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 	}
 	
 	public static void nextLevel() {
-		//SALVANDO INFORMAÇÕES DA FASE ANTERIOR
+		//SALVANDO INFORMAÃ‡Ã•ES DA FASE ANTERIOR
 		int tempPts = player.pontos;
 		int tempVida = player.vida;
 		int tempDinheiro = player.dinheiro;
@@ -323,7 +323,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 		//ADICIONANDO O PLAYER NA LISTA DE ENTIDADES
 		player = new Player((WIDTH/2)-(playerSize/2),HEIGHT-(2*playerSize),playerSize,playerSize,0,tempSpd);
 		entidades.add(player); 
-		//CARREGANDO INFORMAÇÕES DE FASES ANTERIORES
+		//CARREGANDO INFORMAÃ‡Ã•ES DE FASES ANTERIORES
 		player.cooldown = tempCoolDown;
 		player.pontos = tempPts;
 		player.vida = tempVida;
@@ -374,18 +374,18 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {	//VERIFICANDO SE UMA TECLA ESTÁ SENDO PRESSIONADA
+	public void keyPressed(KeyEvent e) {	//VERIFICANDO SE UMA TECLA ESTÃ SENDO PRESSIONADA
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) { //AVALIANDO TECLA ESC
 			System.exit(1); //FECHA MEU PROGRAMA
 		}
 		
 		if(estado == "Menu") {
 			if(e.getKeyCode() == KeyEvent.VK_ENTER || e.getKeyCode() == KeyEvent.VK_SPACE) {
-				menu.enter = true;	//CONFIRMA A OPÇÃO DO MENU
+				menu.enter = true;	//CONFIRMA A OPÃ‡ÃƒO DO MENU
 			}else if(e.getKeyCode() == KeyEvent.VK_UP) {
-				menu.up = true;	//SOBE NAS OPÇÕES DO MENU
+				menu.up = true;	//SOBE NAS OPÃ‡Ã•ES DO MENU
 			}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-				menu.down = true; //DESCE NAS OPÇÕES DO MENU
+				menu.down = true; //DESCE NAS OPÃ‡Ã•ES DO MENU
 			}if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				menu.right = true;	//INDICA QUE MEU PLAYER QUER IR PARA DIREITA
 			}else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -393,9 +393,9 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 			}
 		}else if(estado == "Loja") {
 			if(e.getKeyCode() == KeyEvent.VK_UP) {
-				loja.up = true;	//SOBE NAS OPÇÕES DO MENU
+				loja.up = true;	//SOBE NAS OPÃ‡Ã•ES DO MENU
 			}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-				loja.down = true; //DESCE NAS OPÇÕES DO MENU
+				loja.down = true; //DESCE NAS OPÃ‡Ã•ES DO MENU
 			}else if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 				loja.enter = true;
 			}
@@ -420,7 +420,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseMotionLi
 	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {	//VERIFICANDO SE UMA TECLA NÃO ESTÁ SENDO PRESSIONADA
+	public void keyReleased(KeyEvent e) {	//VERIFICANDO SE UMA TECLA NÃƒO ESTÃ SENDO PRESSIONADA
 		if(estado == "Jogo") {
 			if(e.getKeyCode() == KeyEvent.VK_RIGHT  && controle == "Teclado") {
 				player.right = false;

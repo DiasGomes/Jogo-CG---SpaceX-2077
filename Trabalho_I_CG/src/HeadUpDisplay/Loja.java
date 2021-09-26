@@ -21,7 +21,7 @@ public class Loja {
 			"Inimigos lentos por uma rodada",
 			"Aumenta velocidade da Nave",
 			"Diminui tempo de disparo",
-			"SaÌda"};
+			"Sa√≠da"};
 	public BufferedImage vida,speedIni,speedPlayer,speedBullet, saida, fundo;
 	public BufferedImage[] moeda;
 	public int step = 80,size = 64;
@@ -44,7 +44,7 @@ public class Loja {
 	}
 	
 	public void tick() {
-		//L”GICA DAS OP«’ES DA LOJA
+		//L√ìGICA DAS OP√á√ïES DA LOJA
 		if(up) {
 			up = false;
 			if(index > 0) {
@@ -56,7 +56,7 @@ public class Loja {
 				index++;
 			}
 		}
-		// L”GICA DA COMPRA/CONFIRMA«√O
+		// L√ìGICA DA COMPRA/CONFIRMA√á√ÉO
 		if(enter) { //SE CONFIRMOU
 			enter = false;
 			if(Game.player.dinheiro >= itens[index]) {//SE TEM DINHEIRO
@@ -69,7 +69,7 @@ public class Loja {
 					}
 				break;
 				
-				case 1: //evita que meus inimigosa fiquem mais r·pidos no proximo round
+				case 1: //evita que meus inimigosa fiquem mais r√°pidos no proximo round
 					if(Game.aumentaVelocidade) {
 						Game.aumentaVelocidade = false;
 						Game.player.dinheiro -= itens[1];
@@ -109,7 +109,7 @@ public class Loja {
 		g2.setColor(new Color(0,0,0,150));
 		g2.fillRect(px-(size/2), py, (size/2)*7, size*(itens.length+1));
 		g2.fillRect(0, Game.HEIGHT-size, Game.WIDTH, size);
-		//TÕTULO:
+		//T√çTULO:
 		g.setColor(Color.YELLOW);
 		g.setFont(new Font("comic sans ms", Font.BOLD, 80));
 		g.drawString("Loja",160, 80);
@@ -118,12 +118,12 @@ public class Loja {
 		g.setFont(g.getFont().deriveFont(40.0f));
 		g.drawString(Integer.toString(Game.player.dinheiro), 20+size, 70);
 		g.drawImage(moeda[indexMoeda],20,20,size,size,null);
-		//DESENHANDO OP«’ES
+		//DESENHANDO OP√á√ïES
 			//VIDA
 			g.drawImage(vida,px,py,size,size,null);
 			g.drawImage(moeda[indexMoeda],px+size,py,size,size,null);
 			g.drawString(Integer.toString(itens[0]), px+(size*2),py+50);
-			//LENTID√O DO INIMIGO
+			//LENTID√ÉO DO INIMIGO
 			g.drawImage(speedIni,px,py+step,size,size,null);
 			g.drawImage(moeda[indexMoeda],px+size,py+step,size,size,null);
 			g.drawString(Integer.toString(itens[1]), px+(size*2),py+50+step);
@@ -135,7 +135,7 @@ public class Loja {
 			g.drawImage(speedBullet,px,py+(step*3),size,size,null);
 			g.drawImage(moeda[indexMoeda],px+size,py+(step*3),size,size,null);
 			g.drawString(Integer.toString(itens[3]), px+(size*2),py+50+(step*3));
-			//SAÕDA
+			//SA√çDA
 			g.drawImage(saida,px,py+(step*4),size,size,null);
 		//DESNHANDO ESCOLHA
 		g.setColor(Color.YELLOW);

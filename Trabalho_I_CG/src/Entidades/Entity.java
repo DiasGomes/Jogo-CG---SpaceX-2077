@@ -51,7 +51,7 @@ public class Entity {
 		public static boolean isColliding(Entity e1, Entity e2) {
 			Retangulo rectE1 = new Retangulo(e1.getX(),e1.getY(),e1.getWidth(),e1.getHeight()); //Cria um retangulo para a primeira entidade 
 			Retangulo rectE2 = new Retangulo(e2.getX(),e2.getY(),e2.getWidth(),e2.getHeight()); //Cria um retangulo para a segunda entidade
-			if(rectE1.interceptando(rectE2)) {	//AVALIA SE UM RET√NGULO INTERSEPTA O OUTRO
+			if(rectE1.interceptando(rectE2)) {	//AVALIA SE UM RET√ÉNGULO INTERSEPTA O OUTRO
 				return true;
 			}
 			return false;

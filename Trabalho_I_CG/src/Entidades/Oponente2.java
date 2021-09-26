@@ -26,7 +26,7 @@ public class Oponente2 extends Entity{
 		if(!Game.player.destruido) {
 		//FAZENDO MEUS OPONENTES IREM PARA BAIXO AO TOCAR NA PAREDE
 			changeDirection();
-			//FAZENDO O OPONENETE ATIRAR E ANIMANDO ESSA A«√O
+			//FAZENDO O OPONENETE ATIRAR E ANIMANDO ESSA A√á√ÉO
 			atiraInimigo();
 			atiraAnima();
 			//MOVIMENTANDO MEU OPONENTE PARA OS LADOS:
@@ -44,14 +44,14 @@ public class Oponente2 extends Entity{
 	
 	public void changeDirection() {
 		if(x <= 0){	//UM DOS OPONENTESCHEGARAM NA ESQUERDA DA TELA
-			for(int i = 0;i < Game.inimigos.size();i++) {	//LOOP PARA QUE AS A«’ES AFETEM TODOS OS INIMIGOS
-				Game.inimigos.get(i).setDx(1);	//TODAS OS INIMIGOS V√O PASSAR A IR PARA DIREITA
-				Game.inimigos.get(i).setY(Game.inimigos.get(i).getY() + stepY); //TODAS AS ENTIDADES V√O ANDAR PARA FRENTE
+			for(int i = 0;i < Game.inimigos.size();i++) {	//LOOP PARA QUE AS A√á√ïES AFETEM TODOS OS INIMIGOS
+				Game.inimigos.get(i).setDx(1);	//TODAS OS INIMIGOS V√ÉO PASSAR A IR PARA DIREITA
+				Game.inimigos.get(i).setY(Game.inimigos.get(i).getY() + stepY); //TODAS AS ENTIDADES V√ÉO ANDAR PARA FRENTE
 			}
 		}else if(x + size >= Game.WIDTH){	//UM DOS OPONENTESCHEGARAM NA DIREITA DA TELA
-			for(int n = 0;n < Game.inimigos.size();n++) {	//LOOP PARA QUE AS A«’ES AFETEM TODOS OS INIMIGOS
-				Game.inimigos.get(n).setDx(-1);	//TODAS OS INIMIGOS V√O PASSAR A IR PARA ESQUERDA
-				Game.inimigos.get(n).setY(Game.inimigos.get(n).getY() + stepY);	//TODAS AS ENTIDADES V√O ANDAR PARA FRENTE
+			for(int n = 0;n < Game.inimigos.size();n++) {	//LOOP PARA QUE AS A√á√ïES AFETEM TODOS OS INIMIGOS
+				Game.inimigos.get(n).setDx(-1);	//TODAS OS INIMIGOS V√ÉO PASSAR A IR PARA ESQUERDA
+				Game.inimigos.get(n).setY(Game.inimigos.get(n).getY() + stepY);	//TODAS AS ENTIDADES V√ÉO ANDAR PARA FRENTE
 			}
 		}
 		
@@ -76,10 +76,10 @@ public class Oponente2 extends Entity{
 				if(index < 12){
 					index++;
 				}else{
-					//GERA A BALA NO ⁄LTIMO INDEX PARA CONCILIAR COM A ANIMA«√O DOS SPRITES
+					//GERA A BALA NO √öLTIMO INDEX PARA CONCILIAR COM A ANIMA√á√ÉO DOS SPRITES
 					Game.entidades.add(new Kamikazi(getX()+(getWidth()/2)-(Bullet.bulletSize/2),getY()+ getHeight(),Bullet.bulletSize,Bullet.bulletSize,0,10));
 					index = 0;
-					atirando = false; //PARA QUE A ANIM«√O N√O ENTRE EM LOOP / S” QUANDO ATIRAR
+					atirando = false; //PARA QUE A ANIM√á√ÉO N√ÉO ENTRE EM LOOP / S√ì QUANDO ATIRAR
 				}
 			}
 		}

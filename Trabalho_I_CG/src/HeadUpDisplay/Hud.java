@@ -37,7 +37,7 @@ public class Hud {
 	}
 	
 	public void tick() {
-		//FORMATANDO A APRESENTAÇÃO DA PONTUAÇÃO
+		//FORMATANDO A APRESENTAÃ‡ÃƒO DA PONTUAÃ‡ÃƒO
 		if(Game.player.pontos > 0) {
 			if(Game.player.pontos < 100){
 				pts = "00" + Game.player.pontos;
@@ -61,7 +61,7 @@ public class Hud {
 			Graphics2D g2 = (Graphics2D) g;
 			g2.setColor(new Color(50,50,50,80));
 			g2.fillRect(0, Game.HEIGHT-60, Game.WIDTH, 60);
-			//DESENHANDO A PONTUAÇÃO DO JOGADOR
+			//DESENHANDO A PONTUAÃ‡ÃƒO DO JOGADOR
 			g.setColor(Color.YELLOW);
 			g.setFont(fontePersonalizada);
 			g.drawString(pts, 40, Game.HEIGHT-20);

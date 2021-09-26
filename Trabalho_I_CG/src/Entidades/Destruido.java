@@ -15,9 +15,9 @@ public class Destruido extends Entity{
 
 	public Destruido(int x, int y, int width, int height, int dx, double speed) {
 		super(x, y, width, height, dx, speed);
-		//speed é equivalente ao número de sprites
-		//dx é qual vetor de BufferedImage;
-		//0 é uma bullet
+		//speed Ã© equivalente ao nÃºmero de sprites
+		//dx Ã© qual vetor de BufferedImage;
+		//0 Ã© uma bullet
 		//CARREGA OS SPRITES DA MINHA BULLET
 		spriteBullet = new BufferedImage[4];
 		for(int i = 0;i < 4;i++) {spriteBullet[i] = Game.sheet.getSprite(265 + (8*i), 11, 8, 12);}
@@ -52,7 +52,7 @@ public class Destruido extends Entity{
 			if(index < getSpd()-1) {
 				index++;	//TROCA OS SPRITES
 			}else {
-				Game.entidades.remove(this); //REMOVE A ENTIDADE DEPOIS DE FAZER A ANIMAÇÃO
+				Game.entidades.remove(this); //REMOVE A ENTIDADE DEPOIS DE FAZER A ANIMAÃ‡ÃƒO
 			}
 		}
 	}

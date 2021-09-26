@@ -42,7 +42,7 @@ public class Player extends Entity{
 			movePlayer();
 			//ATIRANDO:
 			playerAtira();
-			//l”GICA DE ANIMA«√O
+			//l√ìGICA DE ANIMA√á√ÉO
 			animaPlayer();
 			//ANIMA O FOGO DO PLAYER
 			animaFogo();
@@ -50,7 +50,7 @@ public class Player extends Entity{
 			estouVivo();
 			//VERIFICA SE VENCEU/ DESTRUIU TODOS OS INIMIGOS
 			venceu();
-			//L”GICA DO MEU PLAYER PISCAR AO SER ATINGIDO
+			//L√ìGICA DO MEU PLAYER PISCAR AO SER ATINGIDO
 			atingido();
 		}else {
 			//ANIMA O PLAYER DESTRUIDO
@@ -68,7 +68,7 @@ public class Player extends Entity{
 			}
 		}
 		if(destruido) {
-			index = 3; //posiÁ„o padr„o da nave
+			index = 3; //posi√ß√£o padr√£o da nave
 			g.drawImage(spriteDestruido[indexDest], getX(), getY(), getWidth(), getHeight(), null);
 		}
 		
@@ -84,7 +84,7 @@ public class Player extends Entity{
 	
 	public void playerAtira() {
 		if(count < 30) {
-			count++; 	//para o contador n„o ir para infinito
+			count++; 	//para o contador n√£o ir para infinito
 		}
 		
 		if(count >= cooldown && shoot) { //DEFINE UM DELAY ENTRE UM DISPARO E O OUTRO
@@ -109,7 +109,7 @@ public class Player extends Entity{
 				if(pisca) { 
 					pisca = false; //FAZ MEU PLAYER SER RENDERIZADO
 				}else {
-					pisca = true;	//FAZ MEU PLAYER N√O SER RENDERIZADO
+					pisca = true;	//FAZ MEU PLAYER N√ÉO SER RENDERIZADO
 				}
 			}
 		}
@@ -130,11 +130,11 @@ public class Player extends Entity{
 		}else {	
 			setDx(0); //EVITANDO DE ANDAR PARA SEMPRE
 		}
-		x += (speed*getDx()); // incrementando a posiÁ„o
+		x += (speed*getDx()); // incrementando a posi√ß√£o
 	}
 	
 	public void animaPlayer() {
-		//OS VALORES DE CONTROLE EST√O RELACIONADO COM AS POSI«’ES DAS IMAGENS E COM O TAMANHO DO SPRITE SHHET
+		//OS VALORES DE CONTROLE EST√ÉO RELACIONADO COM AS POSI√á√ïES DAS IMAGENS E COM O TAMANHO DO SPRITE SHHET
 		//ANIMANDO INDO PARA A ESQUERDA
 				if(left) {
 					timer++;
